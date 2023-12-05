@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 15:47:12 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:30:07 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_strchr(const char s[], int c);
 char			*ft_strrchr(const char s[], int c);
+int				ft_strncmp(const char s1[], const char s2[], unsigned int n);
 
 #endif
