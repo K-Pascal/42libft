@@ -6,95 +6,60 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/12 18:14:53 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:42:34 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-typedef struct s_pos {
-	int	begin;
-	int	end;
-}t_pos;
+#include "libft.h"
 
-static int	count_words(char const s[], char c)
+static size_t	count_words(char const s[], char c)
 {
-	int	i;
-	int	j;
-	int	count;
+	size_t	count;
 
-	i = 0;
 	count = 0;
-	while (s != NULL && s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
 			count++;
-			j = 1;
-			while (s[i + j] != c)
-			{
-				if (s[i + j] == '\0')
-					return (count);
-				j++;
-			}
-			i += j;
+			while (*s != c && *s != '\0')
+				s++;
 		}
 		else
-			i++;
+			s++;
 	}
 	return (count);
 }
 
-static t_pos	next_word(char const s[], char c, int pos)
+static size_t	len_word(char const s[], char c)
 {
-	t_pos	delim;
+	char const	*start;
 
-	delim.begin = 0;
-	delim.end = 0;
-	while (s[pos] != '\0')
-	{
-		if (s[pos] != c)
-		{
-			delim.begin = pos;
-			while (s[pos] != c)
-			{
-				if (s[pos] == '\0')
-					break ;
-				pos++;
-			}
-			delim.end = pos - 1;
-			break ;
-		}
-		else
-			pos++;
-	}
-	return (delim);
+	start = s;
+	while (*s != c && *s != '\0')
+		s++;
+	return (s - start);
 }
 
-static char	*ft_strdup_delim(char const s[], t_pos delim)
+static char	*my_strndup(char const s[], size_t n)
 {
-	char	*str;
-	int		i;
+	char	*dest;
 
-	str = malloc((delim.end - delim.begin + 2) * sizeof(char));
-	if (str == NULL)
+	dest = ft_calloc(n + 1, sizeof(char));
+	if (dest == NULL)
 		return (NULL);
-	i = 0;
-	while (delim.begin + i <= delim.end)
-	{
-		str[i] = s[delim.begin + i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	ft_strlcpy(dest, s, n + 1);
+	return (dest);
 }
 
-static void	my_free_all(char **arr, int len)
+static void	my_free_all(char **arr, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (i <= len)
+	while (i < size)
 	{
 		free(arr[i]);
 		i++;
@@ -105,28 +70,27 @@ static void	my_free_all(char **arr, int len)
 char	**ft_split(char const s[], char c)
 {
 	char	**arr_str;
-	int		num_words;
-	int		i;
-	t_pos	delim;
+	size_t	num_words;
+	size_t	len;
+	size_t	i;
 
 	num_words = count_words(s, c);
-	arr_str = malloc((num_words + 1) * sizeof(char *));
+	arr_str = ft_calloc(num_words + 1, sizeof(char *));
 	if (arr_str == NULL)
 		return (NULL);
 	i = 0;
-	delim.begin = 0;
 	while (i < num_words)
 	{
-		delim = next_word(s, c, delim.begin);
-		arr_str[i] = ft_strdup_delim(s, delim);
-		if (arr_str[i] == NULL)
+		while (*s == c && *s != '\0')
+			s++;
+		len = len_word(s, c);
+		arr_str[i] = my_strndup(s, len);
+		if (arr_str[i++] == NULL)
 		{
 			my_free_all(arr_str, i);
 			return (NULL);
 		}
-		delim.begin = delim.end + 1;
-		i++;
+		s += len;
 	}
-	arr_str[i] = NULL;
 	return (arr_str);
 }
