@@ -6,12 +6,18 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/08 17:04:08 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:19:51 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -48,4 +54,5 @@ void			ft_putstr_fd(char s[], int fd);
 void			ft_putendl_fd(char s[], int fd);
 void			ft_putnbr_fd(int n, int fd);
 
+t_list			*ft_lstnew(void *content);
 #endif
