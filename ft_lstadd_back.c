@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 15:33:57 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:57:06 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (lst == 0)
 		return ;
+	if (*lst == 0)
+	{
+		*lst = new;
+		return ;
+	}
 	last = ft_lstlast(*lst);
 	last->next = new;
 }
