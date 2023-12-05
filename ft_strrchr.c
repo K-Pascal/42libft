@@ -6,14 +6,14 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:44:29 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 19:22:37 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:35:32 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char s[], int c)
 {
-	unsigned int	i;
-	char			*last;
+	int		i;
+	char	*last;
 
 	last = 0;
 	i = 0;
