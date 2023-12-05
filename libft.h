@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/07 15:11:32 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:15:56 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char			*ft_strdup(const char s[]);
 char			*ft_substr(char const *s, unsigned int start, unsigned int len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
+char			**ft_split(char const *s, char c);
 
 #endif
