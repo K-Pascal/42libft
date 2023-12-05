@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 12:33:31 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:39:11 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ static char	*ft_strdup_delim(char const *s, t_pos delim)
 		str[i] = s[delim.begin + i];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
