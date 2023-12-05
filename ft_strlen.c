@@ -6,11 +6,11 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:23:55 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:17:21 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:31:20 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char s[])
+unsigned int	ft_strlen(const char s[])
 {
 	unsigned int	i;
 
