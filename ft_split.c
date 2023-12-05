@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 18:39:11 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:04:51 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ typedef struct s_pos {
 	int	end;
 }t_pos;
 
-static int	count_words(char const *s, char c)
+static int	count_words(char const s[], char c)
 {
 	int	i;
 	int	j;
@@ -45,7 +45,7 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static t_pos	next_word(char const *s, char c, int pos)
+static t_pos	next_word(char const s[], char c, int pos)
 {
 	t_pos	delim;
 
@@ -71,7 +71,7 @@ static t_pos	next_word(char const *s, char c, int pos)
 	return (delim);
 }
 
-static char	*ft_strdup_delim(char const *s, t_pos delim)
+static char	*ft_strdup_delim(char const s[], t_pos delim)
 {
 	char	*str;
 	int		i;
@@ -102,7 +102,7 @@ static void	my_free_all(char **arr, int len)
 	free(arr);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const s[], char c)
 {
 	char	**arr_str;
 	int		num_words;
