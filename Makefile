@@ -21,13 +21,12 @@ TESTNAME := testft
 all: $(NAME)
 
 bonus: $(NAME) $(OBJECTS_BONUS)
-	ar -rs $(NAME) $(OBJECTS_BONUS)
 
 $(NAME): $(OBJECTS)
-	ar -rcs $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I. -c $< -o $@
+	ar -rcs $(NAME) $@
 
 .PHONY: clean fclean re
 clean:
@@ -49,3 +48,8 @@ norm:
 
 cleantest: fclean
 	rm -f $(TESTNAME)
+
+.PHONY: so
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCES) $(SOURCES_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJECTS) $(OBJECTS_BONUS)
