@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 15:37:22 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 15:43:26 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ unsigned int	ft_strlcpy(char dst[], const char src[], unsigned int size);
 unsigned int	ft_strlcat(char dst[], const char src[], unsigned int size);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+char			*ft_strchrc(const char s[], int c);
 
 #endif
