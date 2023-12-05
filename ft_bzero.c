@@ -6,13 +6,15 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:32:20 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/09 19:05:25 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:15:22 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include <stddef.h>
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

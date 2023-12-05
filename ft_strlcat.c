@@ -6,17 +6,19 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:32:23 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/09 19:17:01 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:23:01 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 #include "libft.h"
 
-unsigned int	ft_strlcat(char dst[], const char src[], unsigned int size)
+size_t	ft_strlcat(char dst[], const char src[], size_t size)
 {
-	unsigned int	len_d;
-	unsigned int	len_s;
-	unsigned int	j;
+	size_t	len_d;
+	size_t	len_s;
+	size_t	j;
 
 	len_d = ft_strlen(dst);
 	len_s = ft_strlen(src);
