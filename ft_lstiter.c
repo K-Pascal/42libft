@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:38:01 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 16:07:14 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:10:58 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (f == NULL)
-		return (NULL);
+	if (f == 0)
+		return ;
 	while (lst != 0)
 	{
 		f(lst->content);
