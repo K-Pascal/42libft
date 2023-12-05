@@ -16,8 +16,8 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar -rcs $@ $^
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 .PHONY: clean fclean re
 clean:
