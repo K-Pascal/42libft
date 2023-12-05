@@ -6,13 +6,19 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 12:24:09 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:26:56 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "libft.h"
+
+typedef struct	s_pos
+{
+	int	begin;
+	int	end;
+}	t_pos;
 
 static int	in_set(char const c, char const set[])
 {
@@ -28,45 +34,48 @@ static int	in_set(char const c, char const set[])
 	return (0);
 }
 
-static int	len_aftertrim(char const s1[], char const set[])
+static t_pos	delim_aftertrim(char const s1[], char const set[])
 {
-	int	len;
-
-	len = ft_strlen(s1);
-	if (in_set(s1[0], set))
-		len--;
-	if (in_set(s1[len - 1], set))
-		len--;
-	return (len);
+	t_pos	delim;
+	delim.begin = 0;
+	while (s1[delim.begin] != '\0')
+	{
+		if (!in_set(s1[delim.begin], set))
+			break ;
+		delim.begin++;
+	}
+	delim.end = ft_strlen(s1) - 1;
+	while (delim.end > 0)
+	{
+		if (!in_set(s1[delim.end], set))
+			break ;
+		delim.end--;
+	}
+	return (delim);
 }
 
-static char	*ft_strndup_filter(char const s1[], char const st[], unsigned int s)
+static char	*ft_strndup_delim(char const s1[], t_pos delim)
 {
 	char			*str;
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
 
-	str = malloc(s * sizeof(char));
+	str = malloc((delim.end - delim.begin + 2) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
-	if (in_set(s1[i], st))
-		i++;
-	j = 0;
-	while (s1[i] != '\0' && j + 1 < s)
+	while (delim.begin + i <= delim.end)
 	{
-		str[j] = s1[i];
-		j++;
+		str[i] = s1[delim.begin + i];
 		i++;
 	}
-	str[j] = '\0';
+	str[delim.begin + i] = '\0';
 	return (str);
 }
 
 char	*ft_strtrim(char const s1[], char const set[])
 {
-	unsigned int	size;
-	char			*str;
+	char	*str;
+	t_pos	delim;
 
 	if (s1 == NULL)
 		return (NULL);
@@ -75,7 +84,7 @@ char	*ft_strtrim(char const s1[], char const set[])
 		str = ft_strdup(s1);
 		return (str);
 	}
-	size = len_aftertrim(s1, set) + 1;
-	str = ft_strndup_filter(s1, set, size);
+	delim = delim_aftertrim(s1, set);
+	str = ft_strndup_delim(s1, delim);
 	return (str);
 }
