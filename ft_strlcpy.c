@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:14:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:47:55 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:54:34 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ unsigned int	ft_strlcpy(char dst[], const char src[], unsigned int size)
 		i = 0;
 		while (src[i] != '\0')
 		{
-			if (i < size - 1)
+			if (i >= size - 1)
 				break ;
 			dst[i] = src[i];
 			i++;
