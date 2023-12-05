@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 15:26:56 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:33:22 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-typedef struct	s_pos
+typedef struct s_pos
 {
 	int	begin;
 	int	end;
@@ -37,6 +37,7 @@ static int	in_set(char const c, char const set[])
 static t_pos	delim_aftertrim(char const s1[], char const set[])
 {
 	t_pos	delim;
+
 	delim.begin = 0;
 	while (s1[delim.begin] != '\0')
 	{
@@ -56,8 +57,8 @@ static t_pos	delim_aftertrim(char const s1[], char const set[])
 
 static char	*ft_strndup_delim(char const s1[], t_pos delim)
 {
-	char			*str;
-	int	i;
+	char	*str;
+	int		i;
 
 	str = malloc((delim.end - delim.begin + 2) * sizeof(char));
 	if (str == NULL)
