@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:15:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 17:21:15 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:14:09 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ char	*ft_strnstr(const char big[], const char little[], size_t len)
 	len_l = ft_strlen(little);
 	if (len_l == 0)
 		return ((char *)big);
+	if (len == 0)
+		return (0);
 	i = 0;
-	while (big[i] != '\0' && i + len_l - 1 < len)
+	while (big[i] != '\0' && i + len_l <= len)
 	{
 		j = 0;
 		while (big[i + j] != '\0' && j < len_l)
