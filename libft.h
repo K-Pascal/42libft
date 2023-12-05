@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/08 15:36:15 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:40:35 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char s[], void (*f)(unsigned int, char *));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char s[], int fd);
+void			ft_putendl_fd(char s[], int fd);
 
 #endif
