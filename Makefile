@@ -30,12 +30,11 @@ fclean: clean
 re: fclean all
 
 $(TESTNAME): main.c $(NAME) libft.h
-	$(CC) $(CFLAGS) -I. $< -L. -lft -o $@
+	$(CC) $(CFLAGS) -I. $< -lbsd -L. -lft -o $@
 
 .PHONY: norm cleantest
 norm:
 	norminette -R CheckForbiddenSourceHeader $(SOURCES)
-
 
 cleantest: fclean
 	rm -f $(TESTNAME)
