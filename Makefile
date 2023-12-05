@@ -27,8 +27,8 @@ fclean: clean
 
 re: fclean all
 
-$(TESTNAME): $(NAME) libft.h
-	$(CC) $(CFLAGS) -I. -L. -lft main.c -o $@
+$(TESTNAME): main.c $(NAME) libft.h
+	$(CC) $(CFLAGS) -I. $< -L. -lft -o $@
 
 .PHONY: norm cleantest
 norm:
