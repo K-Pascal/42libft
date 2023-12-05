@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 19:31:25 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:12:06 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,6 @@ char	*ft_strtrim(char const s1[], char const set[])
 	char	*str;
 	t_pos	delim;
 
-	if (s1 == NULL)
-		return (NULL);
-	if (set == NULL)
-	{
-		str = ft_strdup(s1);
-		return (str);
-	}
 	delim = delim_aftertrim(s1, set);
 	str = ft_strndup_delim(s1, delim);
 	return (str);

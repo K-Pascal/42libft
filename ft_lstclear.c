@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:56:36 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 19:34:41 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:17:45 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (lst == NULL || del == NULL)
-		return ;
 	while (*lst != NULL)
 	{
 		temp = (*lst)->next;

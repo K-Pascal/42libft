@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 17:04:51 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:14:53 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ char	**ft_split(char const s[], char c)
 
 	num_words = count_words(s, c);
 	arr_str = malloc((num_words + 1) * sizeof(char *));
-	if (s == NULL || arr_str == NULL)
+	if (arr_str == NULL)
 		return (NULL);
 	i = 0;
 	delim.begin = 0;

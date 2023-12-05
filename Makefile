@@ -25,7 +25,7 @@ bonus: $(NAME) $(OBJECTS_BONUS)
 $(NAME): $(OBJECTS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I. -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 	ar -rcs $(NAME) $@
 
 .PHONY: clean fclean re
@@ -39,7 +39,7 @@ fclean: clean
 re: fclean all
 
 $(TESTNAME): main.c bonus libft.h
-	$(CC) -I. $< -lbsd -L. -lft -o $@
+	$(CC) -g $< -lbsd -L. -lft -o $@
 
 .PHONY: norm cleantest
 norm:
