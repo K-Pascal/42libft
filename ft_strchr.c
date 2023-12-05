@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:36:52 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 15:42:40 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:03:28 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strchr(const char s[], int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			return (s + i * sizeof(char));
+			break ;
 		i++;
 	}
+	if (s[i] == c)
+		return ((char *)(&s[i]));
 	return (0);
 }
