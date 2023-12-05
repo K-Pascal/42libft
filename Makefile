@@ -7,6 +7,7 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
 NAME := libft.a
+TESTNAME := testft
 
 .PHONY: all
 all: $(NAME)
@@ -26,9 +27,13 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: norm test
+$(TESTNAME): $(NAME) libft.h
+	$(CC) $(CFLAGS) -I. -L. -lft main.c -o $@
+
+.PHONY: norm cleantest
 norm:
 	norminette -R CheckForbiddenSourceHeader -R CheckDefine
 
-test: $(NAME) libft.h
-	$(CC) $(FLAGS) -I. -L. -lft main.c
+
+cleantest:
+	rm -f $(TESTNAME)
