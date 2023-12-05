@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 18:36:58 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:31:25 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static char	*ft_strndup_delim(char const s1[], t_pos delim)
 	char	*str;
 	int		i;
 
-	if (delim.begin >= delim.end)
+	if (delim.begin > delim.end)
 	{
 		str = malloc(1 * sizeof(char));
 		str[0] = '\0';
