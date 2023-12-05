@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:24:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 18:42:11 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:10:28 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,12 @@ char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 		return (NULL);
 	len_s = ft_strlen(s);
 	if (start + len > len_s)
-		len = 0;
+	{
+		if ((int)(len_s - start) < 0)
+			len = 0;
+		else
+			len = len_s - start;
+	}
 	str = malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
