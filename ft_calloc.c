@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:58:35 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 17:21:29 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:24:16 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(unsigned int nmemb, unsigned int size)
 
 	if (size != 0 && nmemb > 0b01111111111111111111111111111111 / size)
 		return (NULL);
-	if (nmemb != 0 && size > 0b01111111111111111111111111111111 / size)
+	if (nmemb != 0 && size > 0b01111111111111111111111111111111 / nmemb)
 		return (NULL);
 	len = nmemb * size;
 	array = malloc(nmemb * size);
