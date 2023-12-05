@@ -6,15 +6,15 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:14:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/09 19:17:13 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:23:15 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char dst[], const char src[], unsigned int size)
+size_t	ft_strlcpy(char dst[], const char src[], size_t size)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (size > 0)
 	{

@@ -6,15 +6,17 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:24:17 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 19:05:51 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:28:28 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char s1[], const char s2[], unsigned int n)
+#include <stddef.h>
+
+int	ft_strncmp(const char s1[], const char s2[], size_t n)
 {
 	unsigned char	l1;
 	unsigned char	l2;
-	unsigned int	i;
+	size_t			i;
 
 	i = 0;
 	if (n == 0)

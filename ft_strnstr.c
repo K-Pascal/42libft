@@ -6,17 +6,19 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:15:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/09 19:18:25 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:39:29 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, unsigned int len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len_l;
+	size_t	i;
+	size_t	j;
+	size_t	len_l;
 
 	len_l = ft_strlen(little);
 	if (len_l == 0)
