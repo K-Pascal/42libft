@@ -6,20 +6,19 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:34:08 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 18:46:11 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:15:36 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stddef.h>
 
 #include "libft.h"
 
 void	ft_putstr_fd(char s[], int fd)
 {
-	unsigned int	len;
+	size_t	len;
 
-	if (s == 0)
-		return ;
 	len = ft_strlen(s);
 	write(fd, s, len);
 }

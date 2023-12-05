@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:21:05 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 17:09:50 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:13:49 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@ void	ft_striteri(char s[], void (*f)(unsigned int, char *))
 {
 	int	i;
 
-	if (s == 0 || f == 0)
-		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{
-		f(i, &(s[i]));
+		f(i, s + i);
 		i++;
 	}
 }

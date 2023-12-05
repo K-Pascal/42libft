@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:39:17 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 16:57:30 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:10:37 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strjoin(char const s1[], char const s2[])
 	char	*str;
 	size_t	size;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	str = ft_calloc(size, sizeof(char));
 	if (str == 0)
