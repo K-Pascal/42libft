@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:32:23 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 18:13:36 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:07:38 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 unsigned int	ft_strlcat(char dst[], const char src[], unsigned int size)
 {
 	unsigned int	len_d;
+	unsigned int	len_s;
 	unsigned int	j;
 
 	len_d = ft_strlen(dst);
+	len_s = ft_strlen(src);
 	if (len_d < size)
 	{
 		j = 0;
@@ -29,7 +31,7 @@ unsigned int	ft_strlcat(char dst[], const char src[], unsigned int size)
 			j++;
 		}
 		dst[len_d + j] = '\0';
-		return (len_d + ft_strlen(src));
+		return (len_d + len_s);
 	}
-	return (size);
+	return (size + len_s);
 }
