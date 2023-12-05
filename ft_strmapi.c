@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:00 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 12:55:56 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:47:15 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const s[], char (*f)(unsigned int, char))
 	unsigned int	i;
 	unsigned int	len;
 
-	if (s == 0 && f == 0)
+	if (s == 0 || f == 0)
 		return (0);
 	len = ft_strlen(s);
 	str = ft_calloc(len + 1, sizeof(char));

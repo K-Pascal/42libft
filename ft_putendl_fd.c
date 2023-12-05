@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:39:05 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/09 19:14:37 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:46:31 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char s[], int fd)
 {
+	if (s == 0)
+		return ;
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
