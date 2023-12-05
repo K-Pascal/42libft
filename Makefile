@@ -34,7 +34,7 @@ $(TESTNAME): main.c $(NAME) libft.h
 
 .PHONY: norm cleantest
 norm:
-	norminette -R CheckForbiddenSourceHeader -R CheckDefine
+	norminette -R CheckForbiddenSourceHeader $(SOURCES)
 
 
 cleantest: fclean
