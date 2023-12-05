@@ -6,11 +6,11 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:50 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:10:06 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:33:43 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memcpy(void *dest, const void *src, unsigned int n)
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
 	unsigned int	i;
 
