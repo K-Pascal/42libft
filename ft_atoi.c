@@ -6,15 +6,15 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:41:37 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/09 19:03:28 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:40:12 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
-	unsigned int	i;
-	int				sign;
-	int				nb;
+	int	i;
+	int	sign;
+	int	nb;
 
 	sign = 1;
 	nb = 0;
