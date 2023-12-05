@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 17:28:15 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:55:08 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int				ft_strncmp(const char s1[], const char s2[], unsigned int n);
 void			*ft_memchr(const void *s, int c, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, unsigned int n);
 char			*ft_strnstr(const char *big, const char *little, unsigned int len);
+int				ft_atoi(const char *nptr);
 
 #endif
