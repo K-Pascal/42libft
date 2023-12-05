@@ -6,18 +6,19 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:24:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 20:10:28 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:06:46 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include <stdlib.h>
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, unsigned int len)
+char	*ft_substr(char const s[], unsigned int start, size_t len)
 {
-	char			*str;
-	unsigned int	len_s;
+	char	*str;
+	size_t	len_s;
 
 	if (s == NULL)
 		return (NULL);
