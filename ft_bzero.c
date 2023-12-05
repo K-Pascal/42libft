@@ -6,13 +6,13 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:32:20 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:09:40 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:16:27 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n)

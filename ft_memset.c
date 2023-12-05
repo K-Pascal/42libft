@@ -6,13 +6,13 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:24:56 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:11:13 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:16:48 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *s, int c, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n)
