@@ -6,14 +6,21 @@ SOURCES := ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_s
 
 OBJECTS := $(SOURCES:.c=.o)
 
+SOURCES_BONUS := ft_lstnew.c
+
+OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o)
+
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
 NAME := libft.a
 TESTNAME := testft
 
-.PHONY: all
+.PHONY: all bonus
 all: $(NAME)
+
+bonus: $(NAME) $(OBJECTS_BONUS)
+	ar -rs $(NAME) $(OBJECTS_BONUS)
 
 $(NAME): $(OBJECTS)
 	ar -rcs $@ $^
@@ -24,18 +31,19 @@ $(NAME): $(OBJECTS)
 .PHONY: clean fclean re
 clean:
 	rm -f $(OBJECTS)
+	rm -f $(OBJECTS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-$(TESTNAME): main.c $(NAME) libft.h
+$(TESTNAME): main.c bonus libft.h
 	$(CC) $(CFLAGS) -I. $< -lbsd -L. -lft -o $@
 
 .PHONY: norm cleantest
 norm:
-	norminette -R CheckForbiddenSourceHeader $(SOURCES)
+	norminette -R CheckForbiddenSourceHeader $(SOURCES) $(SOURCES_BONUS)
 	norminette -R CheckDefine libft.h
 
 cleantest: fclean
