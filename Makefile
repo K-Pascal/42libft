@@ -6,7 +6,7 @@ SOURCES := ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_s
 
 OBJECTS := $(SOURCES:.c=.o)
 
-SOURCES_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+SOURCES_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 
 OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o)
 
@@ -39,7 +39,7 @@ fclean: clean
 re: fclean all
 
 $(TESTNAME): main.c bonus libft.h
-	$(CC) $(CFLAGS) -I. $< -lbsd -L. -lft -o $@
+	$(CC) -I. $< -lbsd -L. -lft -o $@
 
 .PHONY: norm cleantest
 norm:
