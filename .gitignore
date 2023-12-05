@@ -1,0 +1,8 @@
+.*
+!.gitignore
+main.c
+testft
+*.o
+libft.a
+a.out
+libft.so
