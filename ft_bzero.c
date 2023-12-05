@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:32:20 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 16:15:22 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:21:27 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	unsigned char	*addr;
 
-	i = 0;
-	while (i < n)
-	{
-		*(char *)(s + i) = 0;
-		i++;
-	}
+	addr = (unsigned char *)s;
+	while (n--)
+		*(addr++) = 0;
 }

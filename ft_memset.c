@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:24:56 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 16:14:09 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:30:30 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*addr;
+	unsigned char	byte;
 
-	i = 0;
-	while (i < n)
+	addr = (unsigned char *)s;
+	byte = (unsigned char)c;
+	while (n--)
 	{
-		*(char *)(s + i) = (char)c;
-		i++;
+		*addr = byte;
+		addr++;
 	}
 	return (s);
 }

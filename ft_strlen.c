@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:23:55 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/11 16:10:50 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:59:47 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char s[])
 {
-	size_t	i;
+	const char	*start;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	start = s;
+	while (*s != '\0')
+		s++;
+	return (s - start);
 }
