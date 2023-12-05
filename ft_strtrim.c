@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/07 15:13:34 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:05:00 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-static int	in_set(char const c, char const *set)
+static int	in_set(char const c, char const set[])
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static int	in_set(char const c, char const *set)
 	return (0);
 }
 
-static int	len_trim(char const *s1, char const *set)
+static int	len_trim(char const s1[], char const set[])
 {
 	int	i;
 	int	count;
@@ -44,28 +44,43 @@ static int	len_trim(char const *s1, char const *set)
 	return (count);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static char	*ft_strndup_filter(char const s[], char const set[], unsigned int s)
 {
+	char			*str;
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	size;
-	char			*str;
 
-	size = ft_strlen(s1) - len_trim(s1, set) + 1;
-	str = malloc(size * sizeof(char));
+	str = malloc(s * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (!in_set(s1[i], set) && j + 1 < size)
+		if (!in_set(s[i], set) && j + 1 < s)
 		{
-			str[j] = s1[i];
+			str[j] = s[i];
 			j++;
 		}
 		i++;
 	}
 	str[j] = '\0';
+	return (str);
+}
+
+char	*ft_strtrim(char const s1[], char const set[])
+{
+	unsigned int	size;
+	char			*str;
+
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+	{
+		str = ft_strdup(s1);
+		return (str);
+	}
+	size = ft_strlen(s1) - len_trim(s1, set) + 1;
+	str = ft_strndup_filter(s1, set, size);
 	return (str);
 }
