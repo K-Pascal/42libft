@@ -6,11 +6,11 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:44:29 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 15:46:43 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:12:40 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char s[], int c)
+char	*ft_strrchr(const char s[], int c)
 {
 	unsigned int	i;
 	char			*last;
@@ -20,8 +20,10 @@ char	*strrchr(const char s[], int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			last = s + i;
+			last = (char *)(&s[i]);
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)(&s[i]));
 	return (last);
 }
