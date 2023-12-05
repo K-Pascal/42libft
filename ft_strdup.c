@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:33:38 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 18:06:32 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:58:12 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 char	*ft_strdup(const char s[])
 {
-	char			*str;
-	unsigned int	i;
-	unsigned int	len;
+	char	*str;
+	int		i;
+	size_t	len;
 
 	len = ft_strlen(s);
 	str = malloc((len + 1) * sizeof(char));
