@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 15:33:22 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:36:58 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static t_pos	delim_aftertrim(char const s1[], char const set[])
 		delim.begin++;
 	}
 	delim.end = ft_strlen(s1) - 1;
-	while (delim.end > 0)
+	while (delim.end >= 0)
 	{
 		if (!in_set(s1[delim.end], set))
 			break ;
@@ -60,6 +60,12 @@ static char	*ft_strndup_delim(char const s1[], t_pos delim)
 	char	*str;
 	int		i;
 
+	if (delim.begin >= delim.end)
+	{
+		str = malloc(1 * sizeof(char));
+		str[0] = '\0';
+		return (str);
+	}
 	str = malloc((delim.end - delim.begin + 2) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
@@ -69,7 +75,7 @@ static char	*ft_strndup_delim(char const s1[], t_pos delim)
 		str[i] = s1[delim.begin + i];
 		i++;
 	}
-	str[delim.begin + i] = '\0';
+	str[i] = '\0';
 	return (str);
 }
 
