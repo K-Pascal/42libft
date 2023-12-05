@@ -6,7 +6,7 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 18:26:50 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:39:22 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int				ft_memcmp(const void *s1, const void *s2, unsigned int n);
 char			*ft_strnstr(const char *big, const char *l, unsigned int len);
 int				ft_atoi(const char *nptr);
 void			*ft_calloc(unsigned int nmemb, unsigned int size);
+char			*ft_strdup(const char s[]);
 
 #endif
