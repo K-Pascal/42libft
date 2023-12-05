@@ -6,19 +6,11 @@
 /*   By: pnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:14:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/06 13:54:34 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:13:51 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static unsigned int	ft_strlen(const char s[])
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcpy(char dst[], const char src[], unsigned int size)
 {
