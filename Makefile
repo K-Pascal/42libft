@@ -12,7 +12,7 @@ SOURCES_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lsta
 OBJECTS_BONUS := $(SOURCES_BONUS:.c=.o)
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -g3
 
 NAME := libft.a
 TESTNAME := testft
@@ -39,7 +39,7 @@ fclean: clean
 re: fclean all
 
 $(TESTNAME): main.c bonus libft.h
-	$(CC) -g $< -lbsd -L. -lft -o $@
+	$(CC) -g3 $< -lbsd -L. -lft -o $@
 
 .PHONY: norm cleantest
 norm:
