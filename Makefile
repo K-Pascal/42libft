@@ -52,11 +52,11 @@ NAME := libft.a
 
 .PHONY: all bonus
 all: $(NAME)
-	ar -rcs $(NAME) $@
 
 bonus: all
 
 $(NAME): $(OBJECTS)
+	ar -rcs $(NAME) $(OBJECTS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(GDB) -c $< -o $@
