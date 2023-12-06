@@ -6,19 +6,14 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:21:05 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/03 17:46:54 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:29:36 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char s[], void (*f)(unsigned int, char *))
 {
-	int	i;
+	unsigned int	i = 0;
 
-	i = 0;
 	while (*s != '\0')
-	{
-		f(i, s);
-		i++;
-		s++;
-	}
+		f(i++, s++);
 }

@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:33:38 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/03 17:46:22 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:40:31 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@
 
 char	*ft_strdup(const char s[])
 {
-	char	*dest;
-	size_t	len;
+	size_t	len = ft_strlen(s);
+	char	*dest = malloc((len + 1) * sizeof(char));
 
-	len = ft_strlen(s);
-	dest = malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	ft_strlcpy(dest, s, len + 1);
+	if (dest)
+		ft_strlcpy(dest, s, len + 1);
 	return (dest);
 }

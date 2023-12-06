@@ -6,17 +6,15 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:44:29 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/03 18:14:51 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:28:44 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char s[], int c)
 {
-	char	character;
-	char	*last;
+	char	character = c;
+	char	*last = 0;
 
-	last = 0;
-	character = (char)c;
 	while (*s != '\0')
 	{
 		if (*s == character)

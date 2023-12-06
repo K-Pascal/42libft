@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/03 17:42:34 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:29:22 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 
 static size_t	count_words(char const s[], char c)
 {
-	size_t	count;
+	size_t	count = 0;
 
-	count = 0;
 	while (*s != '\0')
 	{
 		if (*s != c)
@@ -35,57 +34,35 @@ static size_t	count_words(char const s[], char c)
 
 static size_t	len_word(char const s[], char c)
 {
-	char const	*start;
+	char const	*start = s;
 
-	start = s;
 	while (*s != c && *s != '\0')
 		s++;
 	return (s - start);
 }
 
-static char	*my_strndup(char const s[], size_t n)
-{
-	char	*dest;
-
-	dest = ft_calloc(n + 1, sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	ft_strlcpy(dest, s, n + 1);
-	return (dest);
-}
-
 static void	my_free_all(char **arr, size_t size)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < size)
-	{
+	for (size_t i = 0; i < size; i++)
 		free(arr[i]);
-		i++;
-	}
 	free(arr);
 }
 
 char	**ft_split(char const s[], char c)
 {
-	char	**arr_str;
-	size_t	num_words;
+	size_t	num_words = count_words(s, c);
+	char	**arr_str = ft_calloc(num_words + 1, sizeof(char *));
 	size_t	len;
-	size_t	i;
 
-	num_words = count_words(s, c);
-	arr_str = ft_calloc(num_words + 1, sizeof(char *));
-	if (arr_str == NULL)
+	if (!arr_str)
 		return (NULL);
-	i = 0;
-	while (i < num_words)
+	for (size_t i = 0; i < num_words; i++)
 	{
 		while (*s == c && *s != '\0')
 			s++;
 		len = len_word(s, c);
-		arr_str[i] = my_strndup(s, len);
-		if (arr_str[i++] == NULL)
+		arr_str[i] = ft_substr(s, 0, len);
+		if (!arr_str[i])
 		{
 			my_free_all(arr_str, i);
 			return (NULL);

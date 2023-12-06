@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 19:15:06 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/10 13:22:56 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:02:24 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
+	int	count = 0;
 
-	count = 0;
-	while (lst != 0)
+	while (lst)
 	{
 		count++;
 		lst = lst->next;

@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:34:08 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/11/12 18:15:36 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:27:20 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,5 @@
 
 void	ft_putstr_fd(char s[], int fd)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
-	write(fd, s, len);
+	write(fd, s, ft_strlen(s));
 }
