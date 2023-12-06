@@ -54,12 +54,12 @@ NAME := libft.a
 all: $(NAME)
 	ar -rcs $(NAME) $@
 
-bonus: $(NAME)
+bonus: all
 
 $(NAME): $(OBJECTS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(GDB) -c $< -o $@
 
 .PHONY: clean fclean re
 clean:
