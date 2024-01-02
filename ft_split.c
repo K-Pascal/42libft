@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:29:22 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:53:53 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@
 
 static size_t	count_words(char const s[], char c)
 {
-	size_t	count = 0;
+	size_t	count = 1;
 
-	while (*s != '\0')
+	while (*s && *s == c)
+		s++;
+	if (!*s)
+		return (0);
+
+	int		i = 1;
+	while (s[i])
 	{
-		if (*s != c)
-		{
+		if (s[i - 1] == c && s[i] != c)
 			count++;
-			while (*s != c && *s != '\0')
-				s++;
-		}
-		else
-			s++;
+		i++;
 	}
 	return (count);
 }
@@ -36,7 +37,7 @@ static size_t	len_word(char const s[], char c)
 {
 	char const	*start = s;
 
-	while (*s != c && *s != '\0')
+	while (*s && *s != c)
 		s++;
 	return (s - start);
 }
@@ -52,15 +53,14 @@ char	**ft_split(char const s[], char c)
 {
 	size_t	num_words = count_words(s, c);
 	char	**arr_str = ft_calloc(num_words + 1, sizeof(char *));
-	size_t	len;
 
 	if (!arr_str)
 		return (NULL);
 	for (size_t i = 0; i < num_words; i++)
 	{
-		while (*s == c && *s != '\0')
+		while (*s && *s == c)
 			s++;
-		len = len_word(s, c);
+		size_t	len = len_word(s, c);
 		arr_str[i] = ft_substr(s, 0, len);
 		if (!arr_str[i])
 		{
