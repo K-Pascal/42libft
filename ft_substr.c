@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:24:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:54:01 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:33:33 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 char	*ft_substr(char const s[], unsigned int start, size_t len)
 {
-
 	if (!len)
 		return (ft_strdup(""));
 
