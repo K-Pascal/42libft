@@ -4,7 +4,9 @@ C programming can be very tedious when one doesn’t have access to the highly u
 This project is about understanding the way these functions work, implementing and learning to use them.\
 This library will be helpful since it will be used in next C school assignments.
 
-# Build
+# To build the library
+
+Git clone the repository go to its directory then execute the command
 
 ```Makefile
 make
