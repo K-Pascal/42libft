@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/11 13:53:53 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:58:30 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static size_t	count_words(char const s[], char c)
 {
 	size_t	count = 1;
 
-	while (*s && *s == c)
+	while (*s != '\0' && *s == c)
 		s++;
 	if (!*s)
 		return (0);
 
 	int		i = 1;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i - 1] == c && s[i] != c)
 			count++;
@@ -37,7 +37,7 @@ static size_t	len_word(char const s[], char c)
 {
 	char const	*start = s;
 
-	while (*s && *s != c)
+	while (*s != '\0' && *s != c)
 		s++;
 	return (s - start);
 }
@@ -54,15 +54,15 @@ char	**ft_split(char const s[], char c)
 	size_t	num_words = count_words(s, c);
 	char	**arr_str = ft_calloc(num_words + 1, sizeof(char *));
 
-	if (!arr_str)
+	if (arr_str == NULL)
 		return (NULL);
 	for (size_t i = 0; i < num_words; i++)
 	{
-		while (*s && *s == c)
+		while (*s != '\0' && *s == c)
 			s++;
 		size_t	len = len_word(s, c);
 		arr_str[i] = ft_substr(s, 0, len);
-		if (!arr_str[i])
+		if (arr_str[i] == NULL)
 		{
 			my_free_all(arr_str, i);
 			return (NULL);

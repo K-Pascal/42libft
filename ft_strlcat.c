@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:32:23 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 15:39:22 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:02:12 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char dst[], char const src[], size_t size)
 	if (len_d < size)
 	{
 		dst += len_d;
-		while (*src)
+		while (*src != '\0')
 		{
 			if (++len_d < size)
 				*(dst++) = *src;

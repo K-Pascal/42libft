@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:51:04 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:04:49 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strtrim(char const s1[], char const set[])
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	start = s1;
-	while (*s1)
+	while (*s1 != '\0')
 		s1++;
 	s1--;
 	while (s1 > start && ft_strchr(set, *s1))
