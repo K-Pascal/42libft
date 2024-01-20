@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 15:58:30 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:20:57 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ static void	my_free_all(char **arr, size_t size)
 char	**ft_split(char const s[], char c)
 {
 	size_t	num_words = count_words(s, c);
-	char	**arr_str = ft_calloc(num_words + 1, sizeof(char *));
+	char	**arr_str = malloc((num_words + 1) * sizeof(char *));
 
 	if (arr_str == NULL)
 		return (NULL);
+	arr_str[num_words] = NULL;
 	for (size_t i = 0; i < num_words; i++)
 	{
 		while (*s != '\0' && *s == c)
