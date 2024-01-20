@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:39:17 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:15 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:49:37 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const s1[], char const s2[])
 	char	*dest = malloc((len1 + len2 + 1) * sizeof(char));
 
 	if (dest == NULL)
-		return (0);
+		return (NULL);
 	ft_strlcpy(dest, s1, len1 + 1);
 	ft_strlcpy(dest + len1, s2, len2 + 1);
 	return (dest);

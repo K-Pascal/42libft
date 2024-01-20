@@ -6,11 +6,10 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:58:35 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 15:13:12 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:38:41 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
 

@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 16:20:57 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:19:26 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	count_words(char const s[], char c)
 
 	while (*s != '\0' && *s == c)
 		s++;
-	if (!*s)
+	if (*s == '\0')
 		return (0);
 
 	int		i = 1;
