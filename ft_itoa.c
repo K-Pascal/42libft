@@ -6,9 +6,11 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:11:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:21:31 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:22:41 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 #include "libft.h"
 
@@ -33,9 +35,10 @@ char	*ft_itoa(int n)
 	if (!n)
 		return (ft_strdup("0"));
 	len = num_digits(n) + (n < 0);
-	digits = ft_calloc(len + 1, sizeof(char));
+	digits = malloc((len + 1) * sizeof(char));
 	if (!digits)
 		return (0);
+	digits[len] = '\0';
 	digits[0] = '-';
 	while (n)
 	{
