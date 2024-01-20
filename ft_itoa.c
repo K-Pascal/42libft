@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:11:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 15:54:58 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:40:06 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 	len = num_digits(n) + (n < 0);
 	digits = malloc((len + 1) * sizeof(char));
 	if (digits == NULL)
-		return (0);
+		return (NULL);
 	digits[len] = '\0';
 	digits[0] = '-';
 	while (n)

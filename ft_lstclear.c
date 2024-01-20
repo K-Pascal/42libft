@@ -6,11 +6,11 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:56:36 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:03:08 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:58:09 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
 #include "libft.h"
 
@@ -18,7 +18,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	while (*lst)
+	while (*lst != NULL)
 	{
 		temp = (*lst)->next;
 		ft_lstdelone(*lst, del);

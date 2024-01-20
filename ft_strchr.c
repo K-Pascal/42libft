@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:36:52 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 15:36:12 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:29:52 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(char const s[], int c)
 
 	while (*s != character)
 	{
-		if (!*s)
+		if (*s == '\0')
 			return (0);
 		s++;
 	}

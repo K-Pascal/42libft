@@ -6,11 +6,11 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:00 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 16:27:09 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:02:31 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
 #include "libft.h"
 

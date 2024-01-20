@@ -6,16 +6,18 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:00:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:03:54 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:59:32 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (0);
+	if (lst == NULL)
+		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);
