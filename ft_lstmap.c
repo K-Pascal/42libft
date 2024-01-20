@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:45:19 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 17:00:48 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:11:19 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-
 	if (lst == NULL)
 		return (NULL);
-	t_list	*first = ft_lstnew(f(lst->content));
+	void *content = f(lst->content);
+	t_list	*first = ft_lstnew(content);
 	if (first == NULL)
-		return (NULL);
+		goto failed;
 	t_list	*newlist = first;
 	lst = lst->next;
 	while (lst != NULL)
 	{
-		newlist->next = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		newlist->next = ft_lstnew(content);
 		if (newlist->next == NULL)
-		{
-			ft_lstclear(&first, del);
-			return (NULL);
-		}
+			goto failed;
 		lst = lst->next;
 		newlist = newlist->next;
 	}
+	goto success;
+failed:
+	del(content);
+	ft_lstclear(&first, del);
+success:
 	return (first);
 }
