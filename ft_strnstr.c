@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:15:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:29:07 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:44:31 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char big[], const char little[], size_t len)
+char	*ft_strnstr(char const big[], char const little[], size_t len)
 {
 	if (*little == '\0')
 		return ((char *)big);

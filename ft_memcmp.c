@@ -6,13 +6,13 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:01:00 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:33:54 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:31:08 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(void const *s1, void const *s2, size_t n)
 {
 	unsigned char const	*addr1 = s1;
 	unsigned char const	*addr2 = s2;

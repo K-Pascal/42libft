@@ -6,11 +6,11 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:44:29 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 15:28:44 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:45:00 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char s[], int c)
+char	*ft_strrchr(char const s[], int c)
 {
 	char	character = c;
 	char	*last = 0;

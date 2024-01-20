@@ -6,16 +6,16 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:41:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:26:03 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:32:33 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, void const *src, size_t n)
 {
 	unsigned char		*a_dest = dest;
-	const unsigned char	*a_src = src;
+	unsigned const char	*a_src = src;
 
 	if (dest > src)
 	{

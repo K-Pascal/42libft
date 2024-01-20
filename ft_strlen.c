@@ -6,15 +6,15 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:23:55 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:44:34 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:40:28 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char s[])
+size_t	ft_strlen(char const s[])
 {
-	const char	*start = s;
+	char const	*start = s;
 
 	while (*s != '\0')
 		s++;
