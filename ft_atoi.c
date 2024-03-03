@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:41:37 by pnguyen-          #+#    #+#             */
-/*   Updated: 2023/12/06 14:14:58 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 02:33:32 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ static int	my_isspace(char c)
 
 int	ft_atoi(char const nptr[])
 {
-	int	sign = 1;
-	int	nb = 0;
-
 	while (my_isspace(*nptr))
-		nptr++;
+		++nptr;
+	int	sign = 1;
 	if (*nptr == '+' || *nptr == '-')
 	{
 		if (*nptr == '-')
 			sign = -1;
-		nptr++;
+		++nptr;
 	}
+	int	nb = 0;
 	while (ft_isdigit(*nptr))
 		nb = nb * 10 + *(nptr++) - '0';
 	return (sign * nb);

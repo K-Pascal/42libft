@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_free_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 12:35:50 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 03:04:01 by pnguyen-         ###   ########.fr       */
+/*   Created: 2024/03/03 02:27:05 by pnguyen-          #+#    #+#             */
+/*   Updated: 2024/03/03 02:33:52 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-void	*ft_memcpy(void *dest, void const *src, size_t n)
+void	ft_free_all(char **arr)
 {
-	unsigned char		*a_dest = dest;
-	unsigned char const	*a_src = src;
-	while (n-- != 0)
-		*(a_dest++) = *(a_src++);
-	return (dest);
+	for (size_t i = 0; arr[i] != NULL; ++i)
+	{
+		free(arr[i]);
+		arr[i] = NULL;
+	}
+	free(arr);
 }

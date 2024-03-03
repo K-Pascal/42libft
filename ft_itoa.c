@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:11:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 16:40:06 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 03:01:14 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
 
 static int	num_digits(int n)
 {
-	int	len;
-
-	len = 0;
-	while (n)
+	int	len = 0;
+	while (n != 0)
 	{
-		len++;
+		++len;
 		n /= 10;
 	}
 	return (len);
@@ -29,18 +27,15 @@ static int	num_digits(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*digits;
-	int		len;
-
-	if (!n)
+	if (n == 0)
 		return (ft_strdup("0"));
-	len = num_digits(n) + (n < 0);
-	digits = malloc((len + 1) * sizeof(char));
+	int		len = num_digits(n) + (n < 0);
+	char	*digits = malloc((len + 1) * sizeof(char));
 	if (digits == NULL)
 		return (NULL);
 	digits[len] = '\0';
 	digits[0] = '-';
-	while (n)
+	while (n != 0)
 	{
 		if (n < 0)
 			digits[--len] = -(n % 10) + '0';

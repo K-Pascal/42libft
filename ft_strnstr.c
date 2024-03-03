@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:15:24 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/01/20 16:04:05 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 03:16:19 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,14 @@ char	*ft_strnstr(char const big[], char const little[], size_t len)
 {
 	if (*little == '\0')
 		return ((char *)big);
-	if (!len)
+	if (len == 0)
 		return (NULL);
-
-	size_t	len_l = ft_strlen(little);
-	while (*big != '\0')
+	size_t const	len_l = ft_strlen(little);
+	while (*big != '\0' && len-- >= len_l)
 	{
-		if (len-- < len_l)
-			break ;
-		if (!ft_strncmp(big, little, len_l))
+		if (ft_strncmp(big, little, len_l) == 0)
 			return ((char *)big);
-		big++;
+		++big;
 	}
 	return (NULL);
 }
