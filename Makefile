@@ -42,7 +42,8 @@ FILE		:=	ft_isalpha.c		\
 				ft_lstiter.c		\
 				ft_lstmap.c			\
 				ft_free_all.c
-SRC			:=	$(FILE)
+SRC_PATH	:=	src
+SRC			:=	$(addprefix $(SRC_PATH)/,$(FILE))
 
 GNL_FILE	:=	get_next_line.c
 GNL_PATH	:=	gnl
@@ -51,9 +52,14 @@ GNL_SRC		:=	$(addprefix $(GNL_PATH)/,$(GNL_FILE))
 OBJ_PATH	:=	build
 OBJ			:=	$(addprefix $(OBJ_PATH)/,$(FILE:.c=.o)) $(addprefix $(OBJ_PATH)/,$(GNL_FILE:.c=.o))
 
-CC		:=	cc
-CFLAGS	:=	-Wall -Wextra -Werror
+CC		?=	cc
+CFLAGS	?=	-Wall -Wextra -Werror
 GDB		?=
+
+AR		:=	ar
+ARFLAGS	:=	crvs
+
+RM		:=	rm -f
 
 NAME	:=	libft.a
 
@@ -63,10 +69,10 @@ all: $(NAME)
 bonus: all
 
 $(NAME): $(OBJ)
-	ar -rcs $@ $^
+	$(AR) $(ARFLAGS) $@ $^
 
-$(OBJ_PATH)/%.o: %.c | $(OBJ_PATH)
-	$(CC) $(CFLAGS) $(GDB) -c $< -o $@
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
+	$(CC) $(CFLAGS) $(GDB) -I. -c $< -o $@
 
 $(OBJ_PATH)/%.o: $(GNL_PATH)/%.c | $(OBJ_PATH)
 	$(CC) $(CFLAGS) $(GDB) -c $< -o $@
@@ -76,10 +82,10 @@ $(OBJ_PATH):
 
 .PHONY: clean fclean re
 clean:
-	rm -rf $(OBJ_PATH)
+	$(RM) -r $(OBJ_PATH)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
