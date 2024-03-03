@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 05:29:16 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 06:04:18 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+# include "gnl/get_next_line.h"
 
 typedef struct s_list
 {
@@ -67,6 +69,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*dl)(void *));
 
 void	ft_free_all(char **arr);
-
-char	*get_next_line(int fd);
 #endif

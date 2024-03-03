@@ -88,8 +88,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-.PHONY: norm
-norm:
-	norminette -R CheckForbiddenSourceHeader $(SOURCES)
-	norminette -R CheckDefine libft.h
