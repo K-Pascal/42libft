@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:05:00 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 03:16:02 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 18:06:57 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ char	*ft_strmapi(char const s[], char (*f)(unsigned int, char))
 	char			*dest = malloc((len + 1) * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
+
 	dest[len] = '\0';
 	for (unsigned int i = 0; i < len; ++i, ++s)
 		dest[i] = f(i, *s);
+
 	return (dest);
 }

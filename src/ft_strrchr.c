@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:44:29 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 03:17:14 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 18:07:11 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_strrchr(char const s[], int c)
 			last = s;
 		++s;
 	}
+
 	if (character == '\0')
 		return ((char *)(s));
 	return ((char *)last);

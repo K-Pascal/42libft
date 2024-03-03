@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:41:12 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 02:39:26 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/03 18:02:01 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	*ft_memmove(void *dest, void const *src, size_t n)
 	}
 	else if (dest < src)
 		ft_memcpy(dest, src, n);
+
 	return (dest);
 }
