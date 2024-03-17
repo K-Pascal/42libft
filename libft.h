@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:29:18 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 06:04:18 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/17 19:22:03 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*dl)(void *));
 
 void	ft_free_all(char **arr);
+size_t	ft_countwords(char const str[], char c);
+int		ft_isspace(char c);
+int		ft_atoibase(char const str[], char const base[]);
 #endif

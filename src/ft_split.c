@@ -6,33 +6,13 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:28:42 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 18:11:00 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/03/17 19:01:11 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "libft.h"
-
-static size_t	count_words(char const s[], char const c)
-{
-	while (*s != '\0' && *s == c)
-		++s;
-
-	if (*s == '\0')
-		return (0);
-
-	size_t	count = 1;
-	int		i = 1;
-	while (s[i] != '\0')
-	{
-		if (s[i - 1] == c && s[i] != c)
-			++count;
-		i++;
-	}
-
-	return (count);
-}
 
 static size_t	len_word(char const s[], char const c)
 {
@@ -45,7 +25,7 @@ static size_t	len_word(char const s[], char const c)
 
 char	**ft_split(char const s[], char c)
 {
-	size_t const	num_words = count_words(s, c);
+	size_t const	num_words = ft_countwords(s, c);
 	char			**arr_str = malloc((num_words + 1) * sizeof(char *));
 	if (arr_str == NULL)
 		return (NULL);
