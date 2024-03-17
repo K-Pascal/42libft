@@ -1,4 +1,4 @@
-FILE		:=	ft_atoi.c			\
+FILES		:=	ft_atoi.c			\
 				ft_atoibase.c		\
 				ft_bzero.c			\
 				ft_calloc.c			\
@@ -47,30 +47,28 @@ FILE		:=	ft_atoi.c			\
 				ft_tolower.c		\
 
 SRC_PATH	:=	src
-SRC			:=	$(addprefix $(SRC_PATH)/,$(FILE))
+SRC			:=	$(addprefix $(SRC_PATH)/,$(FILES))
 
-GNL_FILE	:=	get_next_line.c
+GNL_FILES	:=	get_next_line.c
 GNL_PATH	:=	gnl
-GNL_SRC		:=	$(addprefix $(GNL_PATH)/,$(GNL_FILE))
+GNL_SRC		:=	$(addprefix $(GNL_PATH)/,$(GNL_FILES))
 
 OBJ_PATH	:=	build
-OBJ			:=	$(addprefix $(OBJ_PATH)/,$(FILE:.c=.o)) $(addprefix $(OBJ_PATH)/,$(GNL_FILE:.c=.o))
+OBJ			:=	$(addprefix $(OBJ_PATH)/,$(FILES:.c=.o)) $(addprefix $(OBJ_PATH)/,$(GNL_FILES:.c=.o))
 
 CC		?=	cc
 CFLAGS	?=	-Wall -Wextra -Werror
 GDB		?=
 
 AR		:=	ar
-ARFLAGS	:=	crvs
+ARFLAGS	:=	crs
 
 RM		:=	rm -f
 
 NAME	:=	libft.a
 
-.PHONY: all bonus
+.PHONY: all
 all: $(NAME)
-
-bonus: all
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^
