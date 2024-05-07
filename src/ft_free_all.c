@@ -6,7 +6,7 @@
 /*   By: pnguyen- <pnguyen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 02:27:05 by pnguyen-          #+#    #+#             */
-/*   Updated: 2024/03/03 02:33:52 by pnguyen-         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:49:18 by pnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	ft_free_all(char **arr)
 {
+	if (arr == NULL)
+		return ;
 	for (size_t i = 0; arr[i] != NULL; ++i)
-	{
 		free(arr[i]);
-		arr[i] = NULL;
-	}
 	free(arr);
 }
